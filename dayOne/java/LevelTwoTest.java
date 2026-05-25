@@ -34,7 +34,7 @@ public class LevelTwoTest{
 
         int [] inputTwo = {25, 88, 4, 100, 16, 36};
         int [] expectedTwo = LevelTwo.sort(inputTwo);
-        int [] actualTwo = {100, 88, 36, 16, 25, 25};
+        int [] actualTwo = {100, 88, 36, 25, 16, 4};
 
         assertArrayEquals(actualTwo, expectedTwo);
     }

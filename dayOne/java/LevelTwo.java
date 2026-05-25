@@ -1,4 +1,13 @@
 public class LevelTwo{
+    public static void main(String... args){
+
+    int [] num = {1, 2, 3, 2, 4, 3};
+    int [] nums = {25, 88, 4, 100, 16, 36}; 
+
+    System.out.println(java.util.Arrays.toString(mostOccuringNumber(num)));
+    System.out.println(java.util.Arrays.toString(sort(nums)));
+    
+    }
 
 
     public static int [] mostOccuringNumber(int [] collections){
