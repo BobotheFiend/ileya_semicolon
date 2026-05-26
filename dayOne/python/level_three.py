@@ -8,7 +8,3 @@ def merge_and_sort(collections_one, collections_two):
                 merge_list[counter] = swap
     return merge_list
 
-ent = [3, 5, 1] 
-ent_e = [2, 4, 6]
-
-print(merge_and_sort(ent, ent_e))
