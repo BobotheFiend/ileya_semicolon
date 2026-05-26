@@ -32,6 +32,7 @@ def suggest_book_and_page():
 
 def add_books(title):
     if (title not in book_rack):
+        book_rack.append(title)
         return f"Book Added Successfully\n";
     return f"Book already added\n";
 
@@ -54,14 +55,4 @@ def show_all_books():
         return f"No Book(s) in Rack 🥲️";
     return book_rack;
 
-#print(update_books("A Moving man", "Man Artica"))
-#print(remove_books("Learn Python in 12 hrs"))
-#print(remove_books("Everything is F*ucked"))
-#print(remove_books("A Moving man"))
-#print(remove_books("Delusion or Confidence"))
-#print(remove_books("Take Take and Take Some More"))
-#print(show_all_books())
-#print(suggest_book_and_page())
 
-listss = [4,5,6,7,8,9]
-print(listss[-1])

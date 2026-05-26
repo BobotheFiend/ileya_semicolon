@@ -25,14 +25,23 @@ public class BookSuggestionApplication{
             switch(userChoice){
                 case 1:
                     System.out.print("-------------------Suggested Book ⌛️-------------------\n");
-                    String Suggestion = suggest.suggestBookPage();
-                    System.out.println(Suggestion);
+                    String suggestion = suggest.suggestBookPage();
+                    System.out.println(suggestion);
+                    System.out.print("Would you like to get another suggestion? [Yes/no]: ");
+                    String userOption = inputCollector.nextLine().trim();
+                    while(userOption.equalsIgnoreCase("Yes")){
+                        System.out.print("-------------------Suggested Book ⌛️-------------------\n");
+                        suggestion = suggest.suggestBookPage();
+                        System.out.println(suggestion);
+                        System.out.print("Would you like to get another suggestion? [Yes/no]: ");
+                        userOption = inputCollector.nextLine().trim();
+                    }
                     break;
 
                 case 2: 
                     System.out.print("-------------------Adding A Book-------------------\n");
                     System.out.print("Enter the Book you would like to add: ");
-                    String bookToAdd = inputCollector.nextLine();
+                    String bookToAdd = inputCollector.nextLine().trim();
                     String addABook = suggest.addBooks(bookToAdd);
                     System.out.println(addABook);
                     break;
@@ -69,7 +78,7 @@ public class BookSuggestionApplication{
                     System.out.print("""
 -----------------------------------------------------------------------------GoodBye!-----------------------------------------------------------------------------\n"""
                                     );
-                    break;
+//                    break;
 
                 default: System.out.print("Wrong input Try Again");
             }
