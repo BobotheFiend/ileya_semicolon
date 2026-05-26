@@ -1,5 +1,5 @@
 import org.junit.jupiter.api.Test;
-import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -7,15 +7,21 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class LevelOneTest{
 
-//    @Test
-//    public void testThatArrayIsSplitIntoEvenAndOddElementsAndReturnsA2DArray(){
-//
-//        int [] input = {45, 60, 3, 10, 9, 22};
-//        ArrayList<ArrayList<Integer>> expected = LevelOne.oddEvenArraySplitter(input);
-//        ArrayList<ArrayList<Integer>> actual = {{45, 3, 9}, {60, 10, 22}};
-//
-//        assertEquals(actual, expected);
-//    }
+    @Test
+    public void testThatArrayIsSplitIntoEvenAndOddElementsAndReturnsA2DArray(){
+
+        int [] input = {45, 60, 3, 10, 9, 22};
+        int [][] expected = LevelOne.oddEvenArraySplitter(input);
+        int [][] actual = {{45, 3, 9}, {60, 10, 22}};
+
+        assertArrayEquals(actual, expected);
+
+        int [] inputTwo = {25, 88, 33, 100, 16, 36};
+        int [][] expectedTwo = LevelOne.oddEvenArraySplitter(inputTwo);
+        int [][] actualTwo = {{25, 33}, {88, 100, 16, 36}};
+
+        assertArrayEquals(actualTwo, expectedTwo);
+    }
 
     @Test
     public void testThatArrayIsTheSameElementInAReversedOrderdAndReturnsTrue(){

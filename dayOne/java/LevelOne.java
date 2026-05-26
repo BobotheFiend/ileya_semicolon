@@ -1,32 +1,37 @@
 public class LevelOne{
-    public static void main(String... args){
-        int [] numbers = {45, 0, 8, 0, 45};
-        System.out.println(oddEvenArraySplitter(numbers));
-    }
 
-    public static java.util.ArrayList<java.util.ArrayList<Integer>> oddEvenArraySplitter(int [] collections){
-        java.util.ArrayList<java.util.ArrayList<Integer>> combinedArrayList = new java.util.ArrayList<>();
-        java.util.ArrayList<Integer> evenCollections = new java.util.ArrayList<Integer>();
-        java.util.ArrayList<Integer> oddCollections = new java.util.ArrayList<Integer>();
+    public static int [][] oddEvenArraySplitter(int [] collections){
 
+        int oddCount = 0;
+        int evenCount = 0;
         for(int count : collections){
             if (count % 2 == 0){
-                evenCollections.add(count);
+                evenCount++;
             }
             else{
-                oddCollections.add(count);
+                oddCount++;
             }
         }
-        combinedArrayList.add(oddCollections);
-        combinedArrayList.add(evenCollections);
+        int [] evenCollections = new int [evenCount];
+        int [] oddCollections = new int [oddCount];
+
+        int index = 0;
+        int indexTwo = 0;
+        for(int element : collections){
+            if(element % 2 == 0){
+                evenCollections[index] = element;
+                index++;
+            }
+            else{
+                oddCollections[indexTwo] = element;
+                indexTwo++;
+            }
+            
+        }
     
-//        int [][] combinedArray = new int [2][];
-//    
-//        combinedArray[0] = evenCollections.get(0);
-//        combinedArray[1] = oddCollections.get(0);
-//
-//        return combinedArray;
-        return combinedArrayList;
+        int [][] combinedArray = {oddCollections, evenCollections};
+
+        return combinedArray;
     }
 
     public static boolean palindromeArray(int [] collections){
