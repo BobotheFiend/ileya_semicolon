@@ -29,20 +29,20 @@ public class CeasarsCipherTest{
     @Test
     void thatTheFuctionReturnsTheMessageThatAlignsWithTheNumberOfShift(){
         int positionToMove = 3;
-        String message = "call me tomorrow";
+        String message = "call ME tomorrow";
 
         String expected = CeasarsCipher.caesarShift(message,positionToMove);
-        String actual = "FDOO PH WRPRUURZ";
+        String actual = "fdoo PH wrpruurz";
         assertEquals(actual, expected);
     }
 
     @Test
     void thatTheDecryptFuctionReturnsTheMessageThatAlignsWithTheNumberOfShift(){
         int positionToMove = 3;
-        String message = "FDOO PH WRPRUURZ";
+        String message = "FDOO PH WRPRuuRZ";
 
         String expected = CeasarsCipher.decryptCaesarShift(message,positionToMove);
-        String actual = "CALL ME TOMORROW";
+        String actual = "CALL ME TOMOrrOW";
         assertEquals(actual, expected);
     }
 
@@ -52,7 +52,7 @@ public class CeasarsCipherTest{
         String message = "d";
 
         String expected = CeasarsCipher.decryptCaesarShift(message,positionToMove);
-        String actual = "Z";
+        String actual = "z";
         assertNotEquals(actual, expected);
     }
 }
