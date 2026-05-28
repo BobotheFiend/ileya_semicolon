@@ -1,13 +1,4 @@
 public class CeasarsCipher{
-    public static void main(String... nnM){
-    
-        int key = 3;
-        String name = "call me tommorrow";
-        String na = "abc" ;
-        System.out.println(caesarShift(name, key));
-        System.out.println(decryptCaesarShift(na, 1));
-
-    }
   
 
     public static String caesarShift(String message, int key){
