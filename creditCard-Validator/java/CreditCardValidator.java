@@ -1,13 +1,13 @@
 
 public class CreditCardValidator{
  
-    public static String convertNumber(long input){
+    public static String convertNumberToString(long input){
         String numberAsString = input + "";
         return numberAsString;
     }
     public static int checkNumberLength(long input){
         int length = 0;
-        String numberConverted = convertNumber(input);
+        String numberConverted = convertNumberToString(input);
         int numberLength = numberConverted.length();
         if(numberLength >= 13 && numberLength <= 16) {
             length = numberLength;
@@ -17,7 +17,7 @@ public class CreditCardValidator{
     
     public static String checkCardType(long input){
 
-        String numberType = convertNumber(input);
+        String numberType = convertNumberToString(input);
         String cardType = null; 
         if(numberType.startsWith("4")){
             cardType = "VisaCard";
@@ -37,7 +37,7 @@ public class CreditCardValidator{
     public static String checkValidity(long input){
     int [] numbersSplit = new int [checkNumberLength(input)];
     
-    String numberString = convertNumber(input);
+    String numberString = convertNumberToString(input);
     int index = 0;
     for (char numbers : numberString.toCharArray()){
         int convertBackToInt = Character.getNumericValue(numbers);
@@ -48,7 +48,7 @@ public class CreditCardValidator{
     int evenCount = numbersSplit.length - 2;
     for (; evenCount > -1;  evenCount-=2){
         int multiply = numbersSplit[evenCount] * 2;
-        String multiplyToString = convertNumber(multiply);
+        String multiplyToString = convertNumberToString(multiply);
         if(multiplyToString.length() > 1){
             int add = 0;
             while(multiply > 0){

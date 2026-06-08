@@ -58,7 +58,6 @@ public class SemicolonStoreCheckoutApp{
         System.out.print("How much discount will be gotten?.. ");
         int discountAmount = input.nextInt();
 
-//    System.out.print(items);
     System.out.printf(""" 
 
   
@@ -118,7 +117,9 @@ public class SemicolonStoreCheckoutApp{
         double amountCollected = amountToPay();
         double balance = amountCollected - billTotal;
 
-//RRECIPT OUT PUT TO GIVE THE USER...............
+        if (balance >= 0){
+
+//RECIPT OUT PUT TO GIVE THE USER...............
 
     System.out.printf("""   
 
@@ -128,7 +129,7 @@ public class SemicolonStoreCheckoutApp{
  SEMICOLOCN STORES                                                  
  MAIN BRACH                                                         
  LOCATION 312, HERBERT MACAULAY WAY, SABO YABA, LAGOS.              
- TEL: 0329828343                                                    
+ TEL: 0329828348993                                                    
  Date: %s                                                        
  Cashier: %s                                                        
  Customer Name: %s                                                  
@@ -167,18 +168,26 @@ public class SemicolonStoreCheckoutApp{
                                 VAt @ 17.50:     %.2f
 ===================================================================
                                  Bill Total:     %.2f
-                                 Bill Total:     %.2f
-                                 Bill Total:     %.2f
+                                Amount Paid:     %.2f
+                                    Balance:     %.2f
 ===================================================================
             THANK YOU FOR YOUR PATRONAGE
 ===================================================================%n
             """        
 ,subTotal, discount, vat, billTotal, amountCollected, balance);
+
+
+        }
+//        else{
+//            while(balance < 0){
+//
+//                        
+//    
+//            }
    
     }
     
     public static String convertItemToString(int input){
-//        java.util.Scanner input = new java.util.Scanner(System.in);
         String converted = input + "";
         return converted;
     }
@@ -270,6 +279,7 @@ public class SemicolonStoreCheckoutApp{
                 System.out.print(" How much did the customer give to you..?   ");
                 whatToPay = input.nextDouble();
                 catchingError = false;
+                
             }
             catch(java.util.InputMismatchException error){
                 System.out.println("Invaild Input! Check that you entered a number only!\nTry again ");

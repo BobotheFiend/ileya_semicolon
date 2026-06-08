@@ -2,13 +2,13 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+
 
 public class CreditCardValidatorTest{
 
 
     @Test
-    void thatTheNumberInputedIsAnumber(){
+    void thatTheNumberInputedReturnsTheValidNumberLengthAndReturnsZeroForInvalidLength(){
         long userInput = 56478625573839L;
         int expected = CreditCardValidator.checkNumberLength(userInput);
         int actual = 14;
@@ -23,6 +23,8 @@ public class CreditCardValidatorTest{
         int expectedThirdResult = CreditCardValidator.checkNumberLength(secondUserInput);
         int actualThirdResult = 0;
         assertEquals(actualResult, expectedSecondResult);
+
+        assertTrue(expected >=13 && expected <=16);
     }
 
     @Test

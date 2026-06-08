@@ -2,7 +2,7 @@ public class BookSuggestionApplication{
     static void main(String... nnamdi){
         java.util.Scanner inputCollector = new java.util.Scanner(System.in);
         BookSuggestionApp suggest = new BookSuggestionApp();
-//        java.util.ArrayList<Integer> 
+
         System.out.println("""
 -------------------------------------------------------------W E L C O M E TO THE B O O K SUGESTION SYSTEM-------------------------------------------------------------
                              WHAT WOULD YOU LIKE TO READ TODAY🤓️  """
@@ -78,7 +78,6 @@ public class BookSuggestionApplication{
                     System.out.print("""
 -----------------------------------------------------------------------------GoodBye!-----------------------------------------------------------------------------\n"""
                                     );
-//                    break;
 
                 default: System.out.print("Wrong input Try Again");
             }
