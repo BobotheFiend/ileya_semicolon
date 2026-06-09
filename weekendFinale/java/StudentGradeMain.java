@@ -72,6 +72,7 @@ public class StudentGradeMain{
         int [] studentsTotal = StudentGradeMethods.getstudentTotalScores(amountOfStudents, numberOfSubjects, studentScores);
         double [] studentsAverage = StudentGradeMethods.getStudentAverage(amountOfStudents, numberOfSubjects, studentScores);
         int [] studentPositions = StudentGradeMethods.allocateStudentsPositions(amountOfStudents, numberOfSubjects, studentScores);
+        int [] positions = StudentGradeMethods.checkStudentPostion(amountOfStudents, numberOfSubjects, studentScores);
 
         System.out.print("""
 ============================================================================================================================
@@ -94,7 +95,7 @@ public class StudentGradeMain{
             for(; innerCount < numberOfSubjects; innerCount++){
                 System.out.printf(" %8d  ", studentScores[outterCount][innerCount]);
             }
-            System.out.printf("%8d %8.2f %10d",  studentsTotal[outterCount], studentsAverage[outterCount], studentPositions[outterCount]);
+            System.out.printf("%8d %8.2f %10d %5d",  studentsTotal[outterCount], studentsAverage[outterCount], studentPositions[outterCount], positions[outterCount]);
             System.out.printf("%n");
         }
         System.out.print("""

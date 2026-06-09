@@ -35,7 +35,7 @@ public class StudentGradeMethods{
         double averageScore = 0;
         int index = 0;
         for(; index < studentsTotal.length; index++){
-            averageScore = studentsTotal[index] / subjects;
+            averageScore = (double)studentsTotal[index] / subjects;
             studentAverageScore[index] = averageScore;
         }
         
@@ -58,7 +58,7 @@ public class StudentGradeMethods{
                 }
             }
         }
-        return collections;
+        return array;
     }
 
 
@@ -66,7 +66,7 @@ public class StudentGradeMethods{
 
         int [] studentsTotal = getstudentTotalScores(students, subjects, scores);
         int [] studentPosition = new int [students];
-        int [] sortedPosition = getSortedElementsHighToLow(studentsTotal);
+        int [] sortedPosition = getSortedElementsHighToLow(studentsTotal.clone());
         
         int index = 0;
         for(; index < studentsTotal.length; index++){
@@ -74,7 +74,6 @@ public class StudentGradeMethods{
             for(; innerIndex < sortedPosition.length; innerIndex++){
                 if(studentsTotal[index] == sortedPosition[innerIndex]){
                     studentPosition[index] = innerIndex+1;
-                    break;
                 }
             }
             
@@ -417,8 +416,8 @@ Number of Fails: %d%n
 
     public static double getAverageScore(int students, int subjects, int [][] scores){
         int total = getTotalScores(students, subjects, scores);
-        double average = total/students;
-        return (float)average;
+        double average = (double)total/students;
+        return average;
     }
 
 } 
